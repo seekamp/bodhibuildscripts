@@ -1,0 +1,23 @@
+#!/bin/sh
+# Debian entrance package pre-removal script
+# Based on xdm.prerm
+# Acknowledgements to Brandon Robinson, Stephen Early, Mark Eichin, and Manoj Srivastava.
+
+set -e
+
+DAEMON=/usr/sbin/entrance
+
+
+DEFAULT_DISPLAY_MANAGER_FILE=/etc/X11/default-display-manager
+
+if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ] 
+then
+  if [ -e "${DEFAULT_DISPLAY_MANAGER_FILE}.dpkg-tmp" ]
+  then
+    cp "${DEFAULT_DISPLAY_MANAGER_FILE}.dpkg-tmp" "${DEFAULT_DISPLAY_MANAGER_FILE}"
+  else
+    rm -f "${DEFAULT_DISPLAY_MANAGER_FILE}"
+  fi
+fi
+
+exit 0

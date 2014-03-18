@@ -1,0 +1,13 @@
+Source: elemines
+Section: unknown
+Priority: extra
+Maintainer: Jeff Hoogland <jeffhoogland@linux.com>
+Build-Depends: efl
+Standards-Version: 3.8.3
+Homepage: <insert the upstream URL, if relevant>
+
+Package: elemines
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, e19
+Description: An EFL minesweeper clone
+ A minesweeper clone for Enlightenment

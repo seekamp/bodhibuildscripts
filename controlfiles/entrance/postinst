@@ -1,0 +1,16 @@
+#!/bin/sh
+# Debian entrance package post-installation script
+
+
+set -e
+
+DEFAULT_DISPLAY_MANAGER_FILE=/etc/X11/default-display-manager
+
+if [ -e "${DEFAULT_DISPLAY_MANAGER_FILE}" ] 
+then
+  cp ${DEFAULT_DISPLAY_MANAGER_FILE} ${DEFAULT_DISPLAY_MANAGER_FILE}.dpkg-tmp
+fi
+echo "/usr/sbin/entrance" >${DEFAULT_DISPLAY_MANAGER_FILE}
+
+
+exit 0

@@ -1,0 +1,13 @@
+Source: desksanity
+Section: unknown
+Priority: extra
+Maintainer: Jeff Hoogland <jeffhoogland@linux.com>
+Build-Depends: efl
+Standards-Version: 3.8.3
+Homepage: <insert the upstream URL, if relevant>
+
+Package: desksanity-e19
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, e19
+Description: Extra effects for your desktop
+ Extra effects for your Enlightenment desktop
